@@ -468,7 +468,7 @@ const siteConfigRaw = {
           { icon: 'chart',    title: 'Real-time dashboards', description: 'Monitor KPIs live with customizable widgets and charts.' },
           { icon: 'rocket',   title: 'Funnel analysis',      description: 'Identify drop-off points and optimise your conversion flow.' },
           { icon: 'users',    title: 'User cohorts',         description: 'Segment users by behaviour, plan, or custom attributes.' },
-          { icon: 'document', title: 'Automated reports',    description: 'Schedule PDF or Slack reports on any cadence.' },
+          { icon: 'clipboard', title: 'Automated reports',    description: 'Schedule PDF or Slack reports on any cadence.' },
         ],
       },
       {
@@ -479,7 +479,7 @@ const siteConfigRaw = {
         features: [
           { icon: 'users',        title: 'Team workspaces',  description: 'Separate spaces for each team with shared resources.' },
           { icon: 'lock',         title: 'Granular roles',   description: 'Admin, Editor, Viewer — and custom roles for Enterprise.' },
-          { icon: 'chat',         title: 'In-app comments',  description: 'Leave feedback directly on any element.' },
+          { icon: 'send',         title: 'In-app comments',  description: 'Leave feedback directly on any element.' },
           { icon: 'check-circle', title: 'Activity log',     description: 'Full audit trail of every change and who made it.' },
         ],
       },
@@ -491,7 +491,7 @@ const siteConfigRaw = {
         features: [
           { icon: 'puzzle',   title: 'Visual workflow builder', description: 'Drag-and-drop automation without a single line of code.' },
           { icon: 'code-clipboard', title: 'Webhooks & API',          description: 'Trigger actions in external apps instantly.' },
-          { icon: 'refresh',  title: 'Scheduled jobs',          description: 'Run tasks on a cron schedule with full logging.' },
+          { icon: 'calendar', title: 'Scheduled jobs',          description: 'Run tasks on a cron schedule with full logging.' },
           { icon: 'headset',  title: 'Event-driven alerts',     description: 'Notify the right person when something needs attention.' },
         ],
       },
