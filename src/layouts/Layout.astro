@@ -66,6 +66,15 @@ const jsonLd = {
 
     <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
 
+    {import.meta.env.PUBLIC_UMAMI_WEBSITE_ID && (
+      <script
+        is:inline
+        defer
+        src={siteConfig.umami?.src ?? 'https://cloud.umami.is/script.js'}
+        data-website-id={import.meta.env.PUBLIC_UMAMI_WEBSITE_ID}
+      ></script>
+    )}
+
     <script is:inline define:vars={{ themeKey: THEME_STORAGE_KEY }}>
       (() => {
         try {

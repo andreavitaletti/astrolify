@@ -37,6 +37,15 @@ const siteConfigRaw = {
   },
 
   /**
+   * ---- Umami Analytics ----
+   * Set PUBLIC_UMAMI_WEBSITE_ID in your .env file to enable analytics.
+   * Change src only if you use a self-hosted Umami instance.
+   */
+  umami: {
+    src: 'https://cloud.umami.is/script.js' as string,
+  },
+
+  /**
    * ---- Forms ----
    * Demo: leave actions empty and Netlify flags false — components show a fake success state.
    * Real POST: set contactAction / newsletterAction to your endpoint.
