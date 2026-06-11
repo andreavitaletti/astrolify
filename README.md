@@ -50,12 +50,42 @@ src/
 
 The site follows the OS color scheme preference by default (`prefers-color-scheme`). Users can override it with the toggle in the header. No flash on load — the theme is applied synchronously in the `<head>` before first paint.
 
+src/styles/globals.css
+
+## To show only some components
+
+src/pages/index.astro
+
+```
+<Layout>
+  <Hero />
+  <!--
+  <Stats />
+  -->
+  <LogoCloud />
+  <HowItWorks />
+  <Features />
+  <FeatureTabs />
+  <ComparisonTable />
+  <Integrations />
+  <TrustBadges />
+  <Pricing />
+  <Testimonials />
+  <Team />
+  <Roadmap />
+  <BlogPreview />
+  <FAQ />
+  <ContactForm />
+  <Newsletter />
+</Layout>
+```
+
 ## Scripts
 
-| Command | Action |
-|---|---|
-| `npm run dev` | Start dev server at `localhost:4321` |
-| `npm run build` | Type-check and build to `./dist` |
+| Command           | Action                               |
+| ----------------- | ------------------------------------ |
+| `npm run dev`     | Start dev server at `localhost:4321` |
+| `npm run build`   | Type-check and build to `./dist`     |
 | `npm run preview` | Preview the production build locally |
 
 ## License

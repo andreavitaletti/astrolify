@@ -33,6 +33,14 @@ export const siteConfigSchema = z.looseObject({
       newsletterNetlify: z.boolean().optional(),
     })
     .optional(),
+  greenhouse: z
+    .object({
+      badge: z.string().optional(),
+      title: z.string(),
+      description: z.string(),
+      image: z.any(),
+    })
+    .optional(),
 })
 
 export type SiteConfigInput = z.input<typeof siteConfigSchema>

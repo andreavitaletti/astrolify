@@ -1,0 +1,101 @@
+---
+import '../styles/globals.css'
+import { siteConfig } from '../config/site.config'
+import LandingSection from './LandingSection.astro'
+import { Image } from 'astro:assets'
+
+const { greenhouse } = siteConfig
+---
+
+<LandingSection id="greenhouse" class="section">
+  <div class="ac-greenhouse__layout">
+    <div class="ac-greenhouse__image-wrap animate-fade-in-up">
+      <Image
+        src={greenhouse.image}
+        alt={greenhouse.title}
+        class="ac-greenhouse__image"
+      />
+    </div>
+
+    <div class="ac-greenhouse__content animate-fade-in-up delay-200">
+      {greenhouse.badge && (
+        <span class="ac-greenhouse__badge">{greenhouse.badge}</span>
+      )}
+      <h2 class="ac-greenhouse__title">{greenhouse.title}</h2>
+      <p class="ac-greenhouse__desc">{greenhouse.description}</p>
+    </div>
+  </div>
+</LandingSection>
+
+<style>
+  .ac-greenhouse__layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--ac-spacing-16);
+    align-items: center;
+  }
+
+  .ac-greenhouse__image-wrap {
+    position: relative;
+    border-radius: var(--ac-rounded-3xl);
+    overflow: hidden;
+    box-shadow: var(--ac-shadow-xl);
+    border: 0.125rem solid var(--ac-border-color);
+  }
+
+  .ac-greenhouse__image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: var(--ac-transition);
+  }
+
+  .ac-greenhouse__image-wrap:hover .ac-greenhouse__image {
+    transform: scale(1.02);
+  }
+
+  .ac-greenhouse__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ac-spacing-6);
+  }
+
+  .ac-greenhouse__badge {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    padding: var(--ac-spacing-1) var(--ac-spacing-3);
+    font-size: var(--ac-text-xs);
+    font-weight: var(--ac-font-semibold);
+    background: rgba(var(--ac-primary), 0.1);
+    color: rgb(var(--ac-primary));
+    border-radius: var(--ac-rounded-full);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .ac-greenhouse__title {
+    font-size: var(--ac-text-4xl);
+    font-weight: var(--ac-font-bold);
+    line-height: var(--ac-leading-tight);
+    color: var(--ac-text);
+  }
+
+  .ac-greenhouse__desc {
+    font-size: var(--ac-text-lg);
+    color: var(--ac-text-muted);
+    line-height: var(--ac-leading-relaxed);
+  }
+
+  @media (max-width: 56.25rem) {
+    .ac-greenhouse__layout {
+      grid-template-columns: 1fr;
+      gap: var(--ac-spacing-12);
+    }
+
+    .ac-greenhouse__image-wrap {
+      max-width: 32rem;
+      margin: 0 auto;
+    }
+  }
+</style>
