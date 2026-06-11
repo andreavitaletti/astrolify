@@ -5,10 +5,10 @@ import LandingSection from './LandingSection.astro'
 import SectionHeader from './SectionHeader.astro'
 import { revealStaggerTokens } from '../utils/reveal'
 
-const { howItWorks } = siteConfig
+const howItWorks = siteConfig.howItWorks as any
 ---
 
-<LandingSection class="section ac-section-band--subtle">
+<LandingSection id="howitworks" class="section ac-section-band--subtle">
   <div class="ac-hiw">
     <SectionHeader
       badge={howItWorks.badge}
@@ -17,7 +17,7 @@ const { howItWorks } = siteConfig
     />
 
     <div class="ac-hiw__grid">
-    {howItWorks.steps.map((step, i) => (
+    {howItWorks.steps.map((step: any, i: number) => (
       <div class:list={['ac-hiw__item', ...revealStaggerTokens(i)]}>
           <!-- Number badge -->
           <div class="ac-hiw__number-wrap">

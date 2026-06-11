@@ -4,8 +4,8 @@ import { siteConfig } from '../config/site.config'
 import Badge from './Badge.astro'
 import Icon from './Icon.astro'
 
-const { hero } = siteConfig
-const titleLines = hero.title.split('\n')
+const hero = siteConfig.hero as any
+const titleLines = (hero.title || '').split('\n')
 ---
 
 <section class="ac-hero">
@@ -24,7 +24,7 @@ const titleLines = hero.title.split('\n')
         )}
 
         <h1 class="ac-hero__title animate-fade-in-up delay-100">
-          {titleLines.map((line, i) => (
+          {titleLines.map((line: string, i: number) => (
             <span>
               {i === titleLines.length - 1 ? (
                 <span class="gradient-text">{line}</span>
@@ -40,22 +40,23 @@ const titleLines = hero.title.split('\n')
         </p>
       </div>
 
+     
       <div class="ac-hero__after-intro">
         <div class="ac-hero__ctas animate-fade-in-up delay-300">
           <a href={hero.primaryCta.href} class="ac-hero__cta-primary">
             {hero.primaryCta.label}
+            <!--
             <Icon name="arrow_right" size={18} />
+            -->
           </a>
-          <!--
           <a href={hero.secondaryCta.href} class="ac-hero__cta-secondary">
             {hero.secondaryCta.label}
           </a>
-          -->
         </div>
 
         {hero.stats && (
           <div class="ac-hero__stats animate-fade-in-up delay-400">
-            {hero.stats.map((stat) => (
+            {hero.stats.map((stat: any) => (
               <div class="ac-hero__stat">
                 <span class="ac-hero__stat-value">{stat.value}</span>
                 <span class="ac-hero__stat-label">{stat.label}</span>
@@ -64,6 +65,7 @@ const titleLines = hero.title.split('\n')
           </div>
         )}
       </div>
+   
     </div>
   </div>
 </section>

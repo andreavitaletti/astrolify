@@ -13,7 +13,7 @@ import greenhouseImg from "../images/greenhouse.png";
 const siteConfigRaw = {
   /** ---- Brand ---- */
   brand: {
-    name: "GreenPeers",
+    name: "SeedPeers",
     tagline: "Seed Saving Simplified",
     logo: "/logo.svg",
   },
@@ -21,12 +21,12 @@ const siteConfigRaw = {
   /** ---- Navigation ---- */
   nav: {
     links: [
-      { label: "Features", href: "#features" },
-      { label: "Integrations", href: "#integrations" },
-      { label: "Pricing", href: "#pricing" },
-      { label: "Blog", href: "#blog" },
+      // { label: "Features", href: "#features" },
+      // { label: "Integrations", href: "#integrations" },
+      // { label: "Pricing", href: "#pricing" },
+      // { label: "Blog", href: "#blog" },
     ],
-    cta: { label: "Get Started", href: "#pricing" },
+    cta: { label: "Let's talk", href: "#contact" },
   },
 
   /** ---- SEO & language (@astrojs/sitemap uses seo.siteUrl) ---- */
@@ -64,7 +64,7 @@ const siteConfigRaw = {
     //badge: "Conservation",
     title: "Where Function Meets Form",
     description:
-      "The micro-greenhouses are the cornerstone of the GreenPeers network. Engineered to create ideal conditions for seed preservation and growth, they pair advanced functionality with a refined, minimalist design. More than just cultivation devices, they are living showcases of biodiversity that bring nature and beauty into everyday spaces.",
+      "The micro-greenhouses are the cornerstone of the SeedPeers network. Engineered to create ideal conditions for seed preservation and growth, they pair advanced functionality with a refined, minimalist design. More than just cultivation devices, they are living showcases of biodiversity that bring nature and beauty into everyday spaces.",
     image: greenhouseImg,
   },
 
@@ -73,9 +73,9 @@ const siteConfigRaw = {
     // badge: "New: v2.0 is here",
     title: "A collaborative effort\nto preserve seeds",
     description:
-      "Seeds are at the heart of agriculture and food security, but climate change, monocultures, and habitat loss are rapidly eroding their diversity. GreenPeers is a peer-to-peer network of micro-greenhouses that preserves and cultivates a wide range of seeds, helping protect biodiversity and strengthen the resilience of future food systems.",
-    primaryCta: { label: "Get Started", href: "#pricing" },
-    secondaryCta: { label: "See Demo", href: "#features" },
+      "Seeds are at the heart of agriculture and food security, but climate change, monocultures, and habitat loss are rapidly eroding their diversity. SeedPeers is a peer-to-peer network of micro-greenhouses that preserves and cultivates a wide range of seeds, helping protect biodiversity and strengthen the resilience of future food systems.",
+    primaryCta: { label: "The Greenhouse", href: "#greenhouse" },
+    secondaryCta: { label: "How it works", href: "#howitworks" },
     /*
     stats: [
       { value: "10K+", label: "Active users" },
@@ -120,8 +120,8 @@ const siteConfigRaw = {
   /** ---- How It Works Section (optional) ---- */
   howItWorks: {
     //badge: "Process",
-    title: "Get started",
-    description: "Discover how easy it is to become a member of the GreenPeers community",
+    title: "How it works",
+    description: "Discover how easy it is to become a member of the SeedPeers community",
     steps: [
       {
         number: 1,
@@ -483,7 +483,7 @@ const siteConfigRaw = {
 
   /** ---- Contact Section ---- */
   contact: {
-    badge: "Contact",
+    //badge: "Contact",
     title: "Let's talk",
     description:
       "Have a question or ready to get started? Our team replies within 24 hours on business days.",
@@ -494,12 +494,14 @@ const siteConfigRaw = {
         href: "mailto:hello@astrolify.io",
         value: "hello@astrolify.io",
       },
+      /*
       {
         icon: "headset",
         label: "Live chat",
         href: "#",
         value: "Open in the bottom-right",
       },
+      */
       {
         icon: "satellite",
         label: "Headquarters",
