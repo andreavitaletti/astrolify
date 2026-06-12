@@ -11,5 +11,6 @@ export default defineConfig({
   //outDir: "./docs",
   // 3. Keep output as 'static' (this is Astro's default, but good to keep explicit)
   //output: "static",
+  //
   integrations: [sitemap()],
 });
