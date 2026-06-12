@@ -78,7 +78,7 @@ const siteConfigRaw = {
     // badge: "New: v2.0 is here",
     title: "A collaborative effort\nto preserve seeds",
     description:
-      "Seeds are at the heart of agriculture and food security, but climate change, monocultures, and habitat loss are rapidly eroding their diversity. SeedPeers is a peer-to-peer network of micro-greenhouses that preserves and cultivates a wide range of seeds, helping protect biodiversity and strengthen the resilience of future food systems.",
+      "Seeds are at the heart of agriculture and food security, but climate change, monocultures, and habitat loss are rapidly eroding their diversity. SeedPeers is a peer-to-peer network of micro-greenhouses that preserves and cultivates a wide range of seeds, helping protect biodiversity, strengthen the resilience of future food systems, and safeguard the cultivation knowledge and traditions that have sustained communities for generations.",
     primaryCta: { label: "The Greenhouse", href: "#greenhouse" },
     secondaryCta: { label: "How it works", href: "#howitworks" },
     /*
@@ -490,7 +490,7 @@ const siteConfigRaw = {
     badge: undefined as string | undefined,
     title: "Get in touch",
     description:
-      "We are working hard to make GreePeers a reality. Things are progressing well, but we need more time and, more importantly, we need you. \n\n Your voice matters to build our community.",
+      "We are working hard to make GreePeers a reality. Things are progressing well, but we need more time and, more importantly, we need you. Your voice matters in building our community. \n\n Leave your contact details in the form on the right and, if you wish, share your initial feedback with us.",
     channels: [
       {
         icon: "mail",

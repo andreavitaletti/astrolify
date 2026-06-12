@@ -23,7 +23,7 @@ const { badge, title, description, channels } = Astro.props
 <div class="ac-contact__info">
   {badge ? <Badge label={badge} variant="primary" size="medium" /> : null}
   <h2 class="ac-contact__title">{title}</h2>
-  <p class="ac-contact__description">{description}</p>
+  <p class="ac-contact__description" set:html={description} />
 
   <div class="ac-contact__channels">
     {
@@ -70,6 +70,7 @@ const { badge, title, description, channels } = Astro.props
     font-size: var(--ac-text-lg);
     color: var(--ac-text-muted);
     line-height: var(--ac-leading-relaxed);
+    white-space: pre-line;
   }
 
   .ac-contact__channels {
