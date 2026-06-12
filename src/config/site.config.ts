@@ -54,7 +54,8 @@ const siteConfigRaw = {
     contactNetlify: false,
     newsletterNetlify: false,
     googleForm: {
-      actionUrl: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSevmft4y4e8AU_9PRg09S-1uEIU0c6lXQyX6Kqyh_l-x15z4Q/formResponse",
+      actionUrl:
+        "https://docs.google.com/forms/u/1/d/e/1FAIpQLSevmft4y4e8AU_9PRg09S-1uEIU0c6lXQyX6Kqyh_l-x15z4Q/formResponse",
       fields: {
         firstName: "entry.342363159",
         lastName: "entry.460333090",
@@ -551,7 +552,11 @@ const siteConfigRaw = {
         avatar: "https://i.pravatar.cc/150?img=5",
         socials: [
           { platform: "Twitter", icon: "twitter", href: "#" },
-          { platform: "GitHub", icon: "github", href: "#" },
+          {
+            platform: "GitHub",
+            icon: "github",
+            href: "https://github.com/andreavitaletti/seedpeers",
+          },
         ],
       },
       {
@@ -833,7 +838,10 @@ const siteConfigRaw = {
   footer: {
     description: "A collaborative effort to preserve seeds",
 
-    columns: [] as { title: string; links: { label: string; href: string }[] }[],
+    columns: [] as {
+      title: string;
+      links: { label: string; href: string }[];
+    }[],
 
     socials: [
       // { icon: "twitter", href: "#" },
