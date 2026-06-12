@@ -59,6 +59,8 @@ const siteConfigRaw = {
         firstName: "entry.342363159",
         lastName: "entry.460333090",
         email: "entry.168365386",
+        diy: "entry.1208833990",
+        pay: "entry.2118968422",
         message: "entry.446965754",
       },
     },
@@ -491,6 +493,8 @@ const siteConfigRaw = {
     title: "Get in touch",
     description:
       "We are working hard to make GreePeers a reality. Things are progressing well, but we need more time and, more importantly, we need you. Your voice matters in building our community. \n\n Leave your contact details in the form on the right and, if you wish, share your initial feedback with us.",
+    diyLabel: "Build or buy?",
+    payLabel: "Would you support us? (€/month)",
     channels: [
       {
         icon: "mail",

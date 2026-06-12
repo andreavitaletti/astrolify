@@ -5,6 +5,7 @@ import LandingSection from './LandingSection.astro'
 import ContactIntro from './ContactIntro.astro'
 import Input from './Input.astro'
 import Textarea from './Textarea.astro'
+import Select from './Select.astro'
 import Button from './Button.astro'
 
 const { contact, forms } = siteConfig
@@ -40,6 +41,8 @@ const contactDemoOnly = !rawContactAction && !contactNetlify && !hasGoogleForm
         data-google-field-first-name={forms?.googleForm?.fields?.firstName}
         data-google-field-last-name={forms?.googleForm?.fields?.lastName}
         data-google-field-email={forms?.googleForm?.fields?.email}
+        data-google-field-diy={forms?.googleForm?.fields?.diy}
+        data-google-field-pay={forms?.googleForm?.fields?.pay}
         data-google-field-message={forms?.googleForm?.fields?.message}
       >
         <div class="ac-contact__row">
@@ -55,12 +58,39 @@ const contactDemoOnly = !rawContactAction && !contactNetlify && !hasGoogleForm
           required
         />
 
+        Your initial feedback (Optional)
+
+        <div class="ac-contact__row">
+          <Select
+            label={contact.diyLabel || "Build or buy?"}
+            name="diy"
+            placeholder="Select option..."
+            options={[
+              { label: 'DIY (Build it)', value: 'DIY' },
+              { label: 'BUY (Pre-built)', value: 'BUY' }
+            ]}
+            required
+          />
+          <Select
+            label={contact.payLabel || "Willing to pay? (€/month)"}
+            name="pay"
+            placeholder="Select option..."
+            options={[
+              { label: 'No', value: 'no' },
+              { label: '1 €', value: '1' },
+              { label: '5 €', value: '5' },
+              { label: '10 €', value: '10' },
+              { label: 'More', value: 'more' }
+            ]}
+            required
+          />
+        </div>
+
         <Textarea
           label="Message"
           placeholder="Tell us how we can help…"
           name="message"
           rows={5}
-          required
         />
 
         <Button type="submit" label={contact.cta} variant="primary" />
@@ -155,12 +185,16 @@ const contactDemoOnly = !rawContactAction && !contactNetlify && !hasGoogleForm
         firstName: form.getAttribute('data-google-field-first-name'),
         lastName: form.getAttribute('data-google-field-last-name'),
         email: form.getAttribute('data-google-field-email'),
+        diy: form.getAttribute('data-google-field-diy'),
+        pay: form.getAttribute('data-google-field-pay'),
         message: form.getAttribute('data-google-field-message'),
       }
 
       if (fields.firstName) googleData.append(fields.firstName, (formData.get('firstName') as string) ?? '')
       if (fields.lastName) googleData.append(fields.lastName, (formData.get('lastName') as string) ?? '')
       if (fields.email) googleData.append(fields.email, (formData.get('email') as string) ?? '')
+      if (fields.diy) googleData.append(fields.diy, (formData.get('diy') as string) ?? '')
+      if (fields.pay) googleData.append(fields.pay, (formData.get('pay') as string) ?? '')
       if (fields.message) googleData.append(fields.message, (formData.get('message') as string) ?? '')
 
       try {

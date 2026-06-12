@@ -38,6 +38,8 @@ export const siteConfigSchema = z.looseObject({
             firstName: z.string().optional(),
             lastName: z.string().optional(),
             email: z.string().optional(),
+            diy: z.string().optional(),
+            pay: z.string().optional(),
             message: z.string().optional(),
           }),
         })
