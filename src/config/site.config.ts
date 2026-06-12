@@ -846,7 +846,7 @@ const siteConfigRaw = {
     socials: [
       // { icon: "twitter", href: "#" },
       { icon: "github", href: "https://github.com/andreavitaletti/seedpeers" },
-      { icon: "linkedin", href: "#" },
+      { icon: "linkedin", href: "https://www.linkedin.com/company/seedpeers" },
     ],
   },
 };
