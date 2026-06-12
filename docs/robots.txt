@@ -1,5 +1,0 @@
-# Update Sitemap URL when you change site.config → seo.siteUrl (and astro.config uses it).
-User-agent: *
-Allow: /
-
-Sitemap: https://your-domain.com/sitemap-index.xml
