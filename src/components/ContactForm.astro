@@ -5,15 +5,15 @@ import LandingSection from './LandingSection.astro'
 import ContactIntro from './ContactIntro.astro'
 import Input from './Input.astro'
 import Textarea from './Textarea.astro'
-import Select from './Select.astro'
 import Button from './Button.astro'
 
 const { contact, forms } = siteConfig
 const rawContactAction = forms?.contactAction?.trim() ?? ''
 const contactNetlify = forms?.contactNetlify ?? false
+const hasGoogleForm = !!forms?.googleForm?.actionUrl
 const contactFormAction =
   rawContactAction.length > 0 ? rawContactAction : contactNetlify ? '/' : undefined
-const contactDemoOnly = !rawContactAction && !contactNetlify
+const contactDemoOnly = !rawContactAction && !contactNetlify && !hasGoogleForm
 ---
 
 <LandingSection id="contact" class="section ac-section-band--subtle">
@@ -36,6 +36,11 @@ const contactDemoOnly = !rawContactAction && !contactNetlify
         {...contactNetlify
           ? { 'data-netlify': 'true', name: 'contact' }
           : {}}
+        data-google-form-url={forms?.googleForm?.actionUrl}
+        data-google-field-first-name={forms?.googleForm?.fields?.firstName}
+        data-google-field-last-name={forms?.googleForm?.fields?.lastName}
+        data-google-field-email={forms?.googleForm?.fields?.email}
+        data-google-field-message={forms?.googleForm?.fields?.message}
       >
         <div class="ac-contact__row">
           <Input label="First name" placeholder="Jane" name="firstName" required />
@@ -49,8 +54,6 @@ const contactDemoOnly = !rawContactAction && !contactNetlify
           name="email"
           required
         />
-
-        <Select label="Topic" name="topic" options={contact.topics} />
 
         <Textarea
           label="Message"
@@ -134,7 +137,58 @@ const contactDemoOnly = !rawContactAction && !contactNetlify
 
 <script>
   const form = document.querySelector('[data-contact-form]') as HTMLFormElement | null
-  form?.addEventListener('submit', (e) => {
+  form?.addEventListener('submit', async (e) => {
+    const googleFormUrl = form.getAttribute('data-google-form-url')
+    if (googleFormUrl) {
+      e.preventDefault()
+      const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement | null
+      const originalText = btn ? btn.textContent : 'Send Message'
+      if (btn) {
+        btn.textContent = 'Sending...'
+        btn.disabled = true
+      }
+
+      const formData = new FormData(form)
+      const googleData = new URLSearchParams()
+
+      const fields = {
+        firstName: form.getAttribute('data-google-field-first-name'),
+        lastName: form.getAttribute('data-google-field-last-name'),
+        email: form.getAttribute('data-google-field-email'),
+        message: form.getAttribute('data-google-field-message'),
+      }
+
+      if (fields.firstName) googleData.append(fields.firstName, (formData.get('firstName') as string) ?? '')
+      if (fields.lastName) googleData.append(fields.lastName, (formData.get('lastName') as string) ?? '')
+      if (fields.email) googleData.append(fields.email, (formData.get('email') as string) ?? '')
+      if (fields.message) googleData.append(fields.message, (formData.get('message') as string) ?? '')
+
+      try {
+        await fetch(googleFormUrl, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: googleData.toString(),
+        })
+
+        if (btn) {
+          btn.textContent = 'Message sent!'
+        }
+      } catch (err) {
+        console.error('Error submitting form to Google Forms:', err)
+        if (btn) {
+          btn.textContent = 'Error. Try again.'
+          btn.disabled = false
+          setTimeout(() => {
+            btn.textContent = originalText
+          }, 3000)
+        }
+      }
+      return
+    }
+
     if (!form.hasAttribute('data-demo-only')) return
     e.preventDefault()
     const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement | null

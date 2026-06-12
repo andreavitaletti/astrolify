@@ -20,13 +20,8 @@ const siteConfigRaw = {
 
   /** ---- Navigation ---- */
   nav: {
-    links: [
-      // { label: "Features", href: "#features" },
-      // { label: "Integrations", href: "#integrations" },
-      // { label: "Pricing", href: "#pricing" },
-      // { label: "Blog", href: "#blog" },
-    ],
-    cta: { label: "Let's talk", href: "#contact" },
+    links: [] as { label: string; href: string }[],
+    cta: { label: "Get in touch", href: "#contact" },
   },
 
   /** ---- SEO & language (@astrojs/sitemap uses seo.siteUrl) ---- */
@@ -51,12 +46,22 @@ const siteConfigRaw = {
    * Demo: leave actions empty and Netlify flags false — components show a fake success state.
    * Real POST: set contactAction / newsletterAction to your endpoint.
    * Netlify Forms: set contactNetlify / newsletterNetlify to true and deploy on Netlify.
+   * Google Form integration: configure googleForm with your actionUrl and field entry mapping.
    */
   forms: {
     contactAction: "",
     newsletterAction: "",
     contactNetlify: false,
     newsletterNetlify: false,
+    googleForm: {
+      actionUrl: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSevmft4y4e8AU_9PRg09S-1uEIU0c6lXQyX6Kqyh_l-x15z4Q/formResponse",
+      fields: {
+        firstName: "entry.342363159",
+        lastName: "entry.460333090",
+        email: "entry.168365386",
+        message: "entry.446965754",
+      },
+    },
   },
 
   /** ---- Greenhouse Section ---- */
@@ -121,7 +126,8 @@ const siteConfigRaw = {
   howItWorks: {
     //badge: "Process",
     title: "How it works",
-    description: "Discover how easy it is to become a member of the SeedPeers community",
+    description:
+      "Discover how easy it is to become a member of the SeedPeers community",
     steps: [
       {
         number: 1,
@@ -132,14 +138,12 @@ const siteConfigRaw = {
       {
         number: 2,
         title: "Join the network",
-        description:
-          "Regiser your micro-greenhouse on the network.",
+        description: "Regiser your micro-greenhouse on the network.",
       },
       {
         number: 3,
         title: "Get the seeds",
-        description:
-          "Get your seeds and plant them in your micro-greenhouse.",
+        description: "Get your seeds and plant them in your micro-greenhouse.",
       },
       {
         number: 4,
@@ -483,16 +487,16 @@ const siteConfigRaw = {
 
   /** ---- Contact Section ---- */
   contact: {
-    //badge: "Contact",
-    title: "Let's talk",
+    badge: undefined as string | undefined,
+    title: "Get in touch",
     description:
-      "Have a question or ready to get started? Our team replies within 24 hours on business days.",
+      "We are working hard to make GreePeers a reality. Things are progressing well, but we need more time and, more importantly, we need you. \n\n Your voice matters to build our community.",
     channels: [
       {
         icon: "mail",
         label: "Email us",
-        href: "mailto:hello@astrolify.io",
-        value: "hello@astrolify.io",
+        href: "mailto:info@seedpeers.net",
+        value: "info@seedpeers.net",
       },
       /*
       {
@@ -506,7 +510,7 @@ const siteConfigRaw = {
         icon: "satellite",
         label: "Headquarters",
         href: "#",
-        value: "San Francisco, CA",
+        value: "Rome, Italy",
       },
     ],
     topics: [
@@ -823,37 +827,12 @@ const siteConfigRaw = {
 
   /** ---- Footer ---- */
   footer: {
-    description: "Build, launch, and scale your SaaS with confidence.",
-    columns: [
-      {
-        title: "Product",
-        links: [
-          { label: "Features", href: "#features" },
-          { label: "Pricing", href: "#pricing" },
-          { label: "Changelog", href: "#" },
-          { label: "Docs", href: "#" },
-        ],
-      },
-      {
-        title: "Company",
-        links: [
-          { label: "About", href: "#" },
-          { label: "Blog", href: "#" },
-          { label: "Careers", href: "#" },
-          { label: "Contact", href: "#" },
-        ],
-      },
-      {
-        title: "Legal",
-        links: [
-          { label: "Privacy", href: "/privacy" },
-          { label: "Terms", href: "#" },
-          { label: "License", href: "#" },
-        ],
-      },
-    ],
+    description: "A collaborative effort to preserve seeds",
+
+    columns: [] as { title: string; links: { label: string; href: string }[] }[],
+
     socials: [
-      { icon: "twitter", href: "#" },
+      // { icon: "twitter", href: "#" },
       { icon: "github", href: "#" },
       { icon: "linkedin", href: "#" },
     ],

@@ -31,6 +31,17 @@ export const siteConfigSchema = z.looseObject({
       newsletterAction: z.string().optional(),
       contactNetlify: z.boolean().optional(),
       newsletterNetlify: z.boolean().optional(),
+      googleForm: z
+        .object({
+          actionUrl: z.string().url(),
+          fields: z.object({
+            firstName: z.string().optional(),
+            lastName: z.string().optional(),
+            email: z.string().optional(),
+            message: z.string().optional(),
+          }),
+        })
+        .optional(),
     })
     .optional(),
   greenhouse: z
