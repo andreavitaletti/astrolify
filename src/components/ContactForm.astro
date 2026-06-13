@@ -47,18 +47,19 @@ const contactDemoOnly = !rawContactAction && !contactNetlify && !hasGoogleForm
         data-google-field-location={forms?.googleForm?.fields?.location}
         data-google-field-message={forms?.googleForm?.fields?.message}
       >
-        <div class="ac-contact__row">
-          <Input label="First name" placeholder="Jane" name="firstName" />
-          <Input label="Last name" placeholder="Doe" name="lastName" />
-        </div>
 
-        <Input
+         <Input
           label="Email"
           type="email"
           placeholder="jane@company.com"
           name="email"
           required
         />
+
+        <div class="ac-contact__row">
+          <Input label="First name" placeholder="Jane" name="firstName" />
+          <Input label="Last name" placeholder="Doe" name="lastName" />
+        </div>
 
         <Select
           label={contact.locationLabel || "Location"}
