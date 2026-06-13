@@ -136,35 +136,37 @@ const siteConfigRaw = {
         number: 1,
         title: "Get your micro-greenhouse",
         description:
-          "Either buy or build your own micro-greenhouse following our intructions",
+          "Either buy or build your own micro-greenhouse. It is an open source/hardware project",
       },
       {
         number: 2,
         title: "Join the network",
-        description: "Regiser your micro-greenhouse on the network.",
+        description:
+          "Register your micro-greenhouse and become part of a growing community of cultivators.",
       },
       {
         number: 3,
         title: "Get the seeds",
-        description: "Get your seeds and plant them in your micro-greenhouse.",
+        description:
+          "Receive your seeds, plant them in your micro-greenhouse, and start your growing journey. Seeds are distributed to increase diversity and resilience.",
       },
       {
         number: 4,
-        title: "Cultivate the seeds",
+        title: "Grow and Learn",
         description:
-          "Learn how to properly cultivate the seeds and share your experience with the community.",
+          "Cultivate your plants, discover best practices, and learn from the community.",
       },
       {
         number: 5,
         title: "Share the knowledge",
         description:
-          "Tap into the community’s expertise, and give back by sharing what you know",
+          "Benefit from the collective expertise of the network and contribute your own insights to help others grow.",
       },
       {
         number: 6,
         title: "Share the harvest",
         description:
-          "Share the harvest with other members of the network contributing to the diversity of the network.",
+          "Share the harvest with other members of the network, enriching the biodiversity and resilience of the network.",
       },
     ],
   },
