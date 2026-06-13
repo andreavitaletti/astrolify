@@ -21,7 +21,7 @@ const siteConfigRaw = {
   /** ---- Navigation ---- */
   nav: {
     links: [] as { label: string; href: string }[],
-    cta: { label: "Get in touch", href: "#contact" },
+    cta: { label: "You matter", href: "#contact" },
   },
 
   /** ---- SEO & language (@astrojs/sitemap uses seo.siteUrl) ---- */
@@ -62,6 +62,7 @@ const siteConfigRaw = {
         email: "entry.168365386",
         diy: "entry.1208833990",
         pay: "entry.2118968422",
+        location: "entry.1622443027",
         message: "entry.446965754",
       },
     },
@@ -493,11 +494,12 @@ const siteConfigRaw = {
   /** ---- Contact Section ---- */
   contact: {
     badge: undefined as string | undefined,
-    title: "Get in touch",
+    title: "Your voice matters",
     description:
-      "We are working hard to make GreePeers a reality. Things are progressing well, but we need more time and, more importantly, we need you. Your voice matters in building our community. \n\n Leave your contact details in the form on the right and, if you wish, share your initial feedback with us.",
+      "We’re building GreenPeers. Progress is going well, but we’re still early and your input can make a real difference. \n\n Leaving your contact details is completely optional, but it helps us understand your needs, prioritize features, and shape a platform that truly serves the community. \n\n Join us, stay updated, and help shape what comes next.",
     diyLabel: "Build or buy?",
     payLabel: "Would you support us? (€/month)",
+    locationLabel: "Location",
     channels: [
       {
         icon: "mail",
