@@ -496,7 +496,7 @@ const siteConfigRaw = {
     badge: undefined as string | undefined,
     title: "Your voice matters",
     description:
-      "We’re building GreenPeers. Progress is going well, but we’re still early and your input can make a real difference. \n\n Completing this form is entirely optional, but your input helps us understand your needs, prioritize features, and build a platform that truly serves the community. The only required field is your email address so we can stay in touch.\n\n Join us, stay updated, and help shape what comes next.",
+      "We’re building SeedPeers. Progress is going well, but we’re still early and your input can make a real difference. \n\n Completing this form is entirely optional, but your input helps us understand your needs, prioritize features, and build a platform that truly serves the community. The only required field is your email address so we can stay in touch.\n\n Join us, stay updated, and help shape what comes next.",
     diyLabel: "Build or buy?",
     payLabel: "Would you support us? (€/month)",
     locationLabel: "Location",
